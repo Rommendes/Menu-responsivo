@@ -7,8 +7,9 @@
     <title>Menu Responsivo</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media.query.css">
 </head>
-<body>
+<body onresize="mudouTamnho()" >
     <header>
         <h1>Menu Responsivo</h1>
         <span id="burguer" class="material-icons" onclick="clickmenu()"> reorder </span>
@@ -53,8 +54,16 @@
                 }else{
                      itens.style.display = 'block'
                 }
-               
-            
+            }
+            /*Esta função mostra o bloco de ítens (menu) se a tela for grande
+            ---------------------------------
+            innerWidth => largura da tela */
+            function mudouTamanho(){
+                if(window.innerWidth >= 768){
+                    itens.style.display = 'block'
+                }else{
+                    itens.style.display = 'none'
+                }
             }
         </script>
     </main>
